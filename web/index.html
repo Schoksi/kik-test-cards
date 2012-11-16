@@ -36,7 +36,7 @@
 	<div class="app-content">
 		<ul class="app-list">
 			<label>Label 1</label>
-			<li class="app-button" data-target="lists">Item 1</li>
+			<li class="app-button item1" data-target="lists">Send Item 1</li>
 			<li class="app-button">Item 2</li>
 			<li class="app-button">Item 3</li>
 			<label>Label 2</label>
@@ -113,11 +113,14 @@
 <script>
 	App.populator('lists', function (page) {
 		if (cards.kik) {
-			cards.kik.send({
-				title : 'Yo dawg' ,
-				pic   : 'http://4.bp.blogspot.com/-c0TqmGiPc04/T1Fz2b-ceUI/AAAAAAAAADI/z34FnfD0e-Q/s1600/ItsWorkingButton.jpg' ,
-				text : 'We have a new card!'
+			$('.app-button.item1', page).clickable().bind('click', function() {
+				cards.kik.send({
+					title : 'Yo dawg' ,
+					pic   : 'http://4.bp.blogspot.com/-c0TqmGiPc04/T1Fz2b-ceUI/AAAAAAAAADI/z34FnfD0e-Q/s1600/ItsWorkingButton.jpg' ,
+					text : 'We have a new card!'
+				});
 			});
+			
 		}
 	});
 
