@@ -2,13 +2,19 @@
 <html>
 	<head>
 		<!-- App details -->
-		<title>My App</title>
+		<title>Shail</title>
 		<link rel="kik-icon" href="img/icon.png">
 
 		<!-- Styles -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" href="http://code.kik.com/app/1.0.0/dim.css">
 		<link rel="stylesheet" href="css/styles.css">
+		<style>
+	      
+	      #myCanvas {
+	        border: 1px solid #9C9898;
+	      }
+    	</style>
 	</head>
 
 	<body>
@@ -20,14 +26,22 @@
 
 	<div class="app-content">
 		<div class="app-section">
-			<div class="app-button" data-target="lists">Lists</div>
-			<div class="app-button" data-target="buttons">Buttons</div>
-			<div class="app-button" data-target="inputs">Inputs</div>
+			<canvas id="myCanvas" width="578" height="400"></canvas>
+		    <script>
+		      var canvas = document.getElementById('myCanvas');
+		      var context = canvas.getContext('2d');
+		      var imageObj = new Image();
+
+		      imageObj.onload = function() {
+		        context.drawImage(imageObj, 69, 50);
+		      };
+		      imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
+		    </script>
 		</div>
 	</div>
 </div>
 
-<div class="app-page" data-page="lists">
+<!-- <div class="app-page" data-page="lists">
 	<div class="app-topbar">
 		<div class="left app-button" data-back="true">Back</div>
 		<div class="app-title" data-autosize="true">Lists</div>
@@ -37,7 +51,7 @@
 		<ul class="app-list">
 			<label>Label 1</label>
 			<li class="app-button" data-target="lists">Item 1</li>
-			<li class="app-button item1">Send  Item</li>
+			<li class="app-button item1">Send Item</li>
 			<li class="app-button">Item 3</li>
 			<label>Label 2</label>
 			<li>Item 4</li>
@@ -103,7 +117,7 @@
 			<div class="app-button">Send</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 
 
