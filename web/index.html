@@ -13,37 +13,41 @@
 	      
 	      #myCanvas {
 	        border: 1px solid #9C9898;
+	        width: 100%;
+	        position: absolute; 
+  			top: 30px;
+  			left: 0px;
 	      }
     	</style>
 	</head>
 
-	<body>
+	<body id="canvas">
 		<!-- Home page -->
-		<div class="app-page" data-page="home">
+		<!-- <div class="app-page" data-page="home">
+			<div class="app-topbar">
+				<div class="app-title">Basic App</div>
+			</div>
+
+			<div class="app-content" >
+				<div class="app-section">
+					<canvas id="myCanvas" cornerRadius="30px"></canvas>
+				    <script>
+					    var canvas = document.getElementById('myCanvas');
+					    var context = canvas.getContext('2d');
+					    var imageObj = new Image();
+
+					    imageObj.onload = function() {
+					    	context.drawImage(imageObj, 69, 50);
+					    };
+					    imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
+				    </script>
+				</div>
+			</div>
+		</div> -->
+
+<div class="app-page" data-page="home">
 	<div class="app-topbar">
-		<div class="app-title">Basic App</div>
-	</div>
-
-	<div class="app-content">
-		<div class="app-section">
-			<canvas id="myCanvas" width="578" height="400"></canvas>
-		    <script>
-		      var canvas = document.getElementById('myCanvas');
-		      var context = canvas.getContext('2d');
-		      var imageObj = new Image();
-
-		      imageObj.onload = function() {
-		        context.drawImage(imageObj, 69, 50);
-		      };
-		      imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
-		    </script>
-		</div>
-	</div>
-</div>
-
-<!-- <div class="app-page" data-page="lists">
-	<div class="app-topbar">
-		<div class="left app-button" data-back="true">Back</div>
+		<!-- <div class="left app-button" data-back="true">Back</div> -->
 		<div class="app-title" data-autosize="true">Lists</div>
 	</div>
 
@@ -69,7 +73,7 @@
 	</div>
 </div>
 
-<div class="app-page" data-page="buttons">
+<!-- <div class="app-page" data-page="buttons">
 	<div class="app-topbar">
 		<div class="left app-button" data-back="true">Back</div>
 		<div class="app-title">Buttons</div>
@@ -118,33 +122,29 @@
 		</div>
 	</div>
 </div> -->
-
-
-
-<script src="http://cdn.kik.com/cards/0.3.11/cards.js"></script>
-<script src="http://cdn.kik.com/app/1.7.6/app.js"></script>
-
-<script>
-	App.populator('lists', function (page) {
-		if (cards.kik) {
-			$('.app-button.item1', page).clickable().bind('click', function() {
-				cards.kik.send({
-					title : 'Yo dawg' ,
-					pic   : 'http://4.bp.blogspot.com/-c0TqmGiPc04/T1Fz2b-ceUI/AAAAAAAAADI/z34FnfD0e-Q/s1600/ItsWorkingButton.jpg' ,
-					text : 'We have a new card!'
-				});
+		<script src="http://cdn.kik.com/cards/0.3.11/cards.js"></script>
+		<script src="http://cdn.kik.com/app/1.7.6/app.js"></script>
+		<script>
+			App.populator('lists', function (page) {
+				if (cards.kik) {
+					$('.app-button .item1', page).clickable().bind('click', function() {
+						cards.kik.send({
+							title : 'Yo dawg' ,
+							pic   : 'http://4.bp.blogspot.com/-c0TqmGiPc04/T1Fz2b-ceUI/AAAAAAAAADI/z34FnfD0e-Q/s1600/ItsWorkingButton.jpg' ,
+							text : 'We have a new card!'
+						});
+					});
+					
+				}
 			});
-			
-		}
-	});
 
-	try {
-		App.restore();
-	}
-	catch (err) {
-		App.load('home');
-	}
-</script>
+			try {
+				App.restore();
+			}
+			catch (err) {
+				App.load('home');
+			}
+		</script>
 
 		<!-- Scripts -->
 		<script src="js/zepto.min.js"></script>
