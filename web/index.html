@@ -125,13 +125,13 @@
 		<script src="http://cdn.kik.com/cards/0.3.11/cards.js"></script>
 		<script src="http://cdn.kik.com/app/1.7.6/app.js"></script>
 		<script>
-			App.populator('lists', function (page) {
+			App.populator('home', function (page) {
 				if (cards.kik) {
 					$('.app-button .item1', page).clickable().bind('click', function() {
 						cards.kik.send({
 							title : 'Yo dawg' ,
-							pic   : 'http://4.bp.blogspot.com/-c0TqmGiPc04/T1Fz2b-ceUI/AAAAAAAAADI/z34FnfD0e-Q/s1600/ItsWorkingButton.jpg' ,
-							text : 'We have a new card!'
+							pic   : 'http://data.whicdn.com/images/11948658/aww-cute-dog-uppy-white-puppy-Favim.com-104132_large.jpg',
+							big : true
 						});
 					});
 					
